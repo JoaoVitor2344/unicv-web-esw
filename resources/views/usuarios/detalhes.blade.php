@@ -8,10 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </head>
   <body class="p-5">
-    <h1>{{ $produto->descricao }}</h1>
-    <p>Código: {{ $produto->id }}</p>
-    <p>Preço: {{ $produto->preco }}</p>
-    <p>Quantidade: {{ $produto->quantidade }}</p>
-    <p><a href="/produtos" class="btn btn-success">Voltar</a></p>
+    <h1>{{ $usuario->nome }}</h1>
+    <p>Código: {{ $usuario->id }}</p>
+    <p>Email: {{ $usuario->email }}</p>
+    <p>Idade: {{ $usuario->idade }}</p>
+    <p>Telefone: {{ $usuario->telefone }}</p>
+    <p><a href="/usuarios" class="btn btn-success">Voltar</a></p>
   </body>
 </html>

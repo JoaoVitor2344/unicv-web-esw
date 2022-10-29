@@ -8,28 +8,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </head>
   <body class="p-5">
-    <h1>Listagem de Produtos</h1>
+    <h1>Listagem de Usuários</h1>
     @if (session('mensagem'))
       <div class="alert alert-success">{{ session('mensagem') }}</div>
     @endif
-    <p><a href="/produtos/novo" class="btn btn-dark">Novo Produto</a></p>
+    <p><a href="/usuarios/novo" class="btn btn-dark">Novo Usuário</a></p>
     <table class="table">
     <thead>
         <tr>
             <th>Código</th>
-            <th>Descrição</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Idade</th>
+            <th>Telefone</th>
             <th>Opções</th>
         </tr>
     </thead>
         <tbody>
-        @foreach ($produtos as $produto)
+        @foreach ($usuarios as $usuario)
             <tr>
-                <td>{{ $produto->id }}</td>
-                <td>{{ $produto->descricao }}</td>
+                <td>{{ $usuario->id }}</td>
+                <td>{{ $usuario->nome }}</td>
+                <td>{{ $usuario->email }}</td>
+                <td>{{ $usuario->idade }}</td>
+                <td>{{ $usuario->telefone }}</td>
                 <td>
-                  <a href="/produtos/{{ $produto->id }}" class="btn btn-info">Visualizar</a>
-                  <a href="/produtos/editar/{{ $produto->id }}" class="btn btn-warning">Editar</a>
-                  <a href="/produtos/excluir/{{ $produto->id }}" class="btn btn-danger">Excluir</a>
+                  <a href="/usuarios/{{ $usuario->id }}" class="btn btn-info">Visualizar</a>
+                  <a href="/usuarios/editar/{{ $usuario->id }}" class="btn btn-warning">Editar</a>
+                  <a href="/usuarios/excluir/{{ $usuario->id }}" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
         @endforeach

@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </head>
   <body class="p-5">
-    <h1>Editar Produto</h1>
+    <h1>Novo Usuario</h1>
     @if ($errors->any())
       <ul class="alert alert-danger">
       @foreach ($errors->all() as $error)
@@ -16,21 +16,25 @@
       @endforeach
       </ul>
     @endif
-    <form action="/produtos/gravar/{{ $produto->id }}" method="post">
+    <form action="/usuarios/salvar" method="post">
         @csrf
         <div class="mb-3">
-            <label for="descricao" class="form-label">Descrição</label>
-            <input type="text" class="form-control" id="descricao" name="descricao" value="{{ $produto->descricao }}">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" value="{{ old('nome') }}">
         </div>
         <div class="mb-3">
-            <label for="preco" class="form-label">Preço</label>
-            <input type="number" class="form-control" id="preco" name="preco" value="{{ $produto->preco }}">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
         </div>
         <div class="mb-3">
-            <label for="quantidade" class="form-label">Quantidade</label>
-            <input type="number" class="form-control" id="quantidade" name="quantidade" value="{{ $produto->quantidade }}">
+            <label for="idade" class="form-label">Idade</label>
+            <input type="text" class="form-control" id="idade" name="idade">
         </div>
-        <p><input type="submit" value="Salvar" class="btn btn-success"></p>
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" id="telefone" name="telefone">
+        </div>
+        <p><input type="submit" value="Cadastrar" class="btn btn-success"></p>
     </form>
   </body>
 </html>
